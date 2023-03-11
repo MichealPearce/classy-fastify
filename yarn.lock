@@ -14,7 +14,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fastify/ajv-compiler@npm:^3.3.1":
+"@fastify/ajv-compiler@npm:^3.5.0":
   version: 3.5.0
   resolution: "@fastify/ajv-compiler@npm:3.5.0"
   dependencies:
@@ -79,6 +79,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@michealpearce/classy-fastify@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@michealpearce/classy-fastify@workspace:."
+  dependencies:
+    "@michealpearce/utils": ^0.0.3
+    "@types/node": ^18.15.0
+    fastify: ^4.14.1
+    nodemon: ^2.0.20
+    ts-node: ^10.9.1
+    typescript: ^4.9.4
+  languageName: unknown
+  linkType: soft
+
+"@michealpearce/utils@npm:^0.0.3":
+  version: 0.0.3
+  resolution: "@michealpearce/utils@npm:0.0.3"
+  checksum: 79b9b3e97aaa8fc607da4a2aa40efbfad4480e1de06a270bd48b96bc149c67c649f051b182ff51aafc41858bdf7c40f17fcb1cf20de5c9117fbab4666d53203d
+  languageName: node
+  linkType: hard
+
 "@npmcli/fs@npm:^2.1.0":
   version: 2.1.2
   resolution: "@npmcli/fs@npm:2.1.2"
@@ -131,6 +151,13 @@ __metadata:
   version: 1.0.3
   resolution: "@tsconfig/node16@npm:1.0.3"
   checksum: 3a8b657dd047495b7ad23437d6afd20297ce90380ff0bdee93fc7d39a900dbd8d9e26e53ff6b465e7967ce2adf0b218782590ce9013285121e6a5928fbd6819f
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^18.15.0":
+  version: 18.15.0
+  resolution: "@types/node@npm:18.15.0"
+  checksum: d81372276dd5053b1743338b61a2178ff9722dc609189d01fc7d1c2acd539414039e0e4780678730514390dad3f29c366a28c29e8dbd5b0025651181f6dd6669
   languageName: node
   linkType: hard
 
@@ -406,17 +433,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"classy-fastify@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "classy-fastify@workspace:."
-  dependencies:
-    fastify: ^4.11.0
-    nodemon: ^2.0.20
-    ts-node: ^10.9.1
-    typescript: ^4.9.4
-  languageName: unknown
-  linkType: soft
-
 "clean-stack@npm:^2.0.0":
   version: 2.2.0
   resolution: "clean-stack@npm:2.2.0"
@@ -444,13 +460,6 @@ __metadata:
   version: 1.1.0
   resolution: "console-control-strings@npm:1.1.0"
   checksum: 8755d76787f94e6cf79ce4666f0c5519906d7f5b02d4b884cf41e11dcd759ed69c57da0670afd9236d229a46e0f9cf519db0cd829c6dca820bb5a5c3def584ed
-  languageName: node
-  linkType: hard
-
-"content-type@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "content-type@npm:1.0.4"
-  checksum: 3d93585fda985d1554eca5ebd251994327608d2e200978fdbfba21c0c679914d5faf266d17027de44b34a72c7b0745b18584ecccaa7e1fdfb6a68ac7114f12e0
   languageName: node
   linkType: hard
 
@@ -554,6 +563,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fast-content-type-parse@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "fast-content-type-parse@npm:1.0.0"
+  checksum: 9e9187be17bea18a2ee715c5737b983181cbe84f286a291db0595e421e04b578da10ca10845639be08664a4db6a793f7709822935cf38cfdf9ecba38d84ead9e
+  languageName: node
+  linkType: hard
+
 "fast-decode-uri-component@npm:^1.0.1":
   version: 1.0.1
   resolution: "fast-decode-uri-component@npm:1.0.1"
@@ -605,16 +621,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify@npm:^4.11.0":
-  version: 4.11.0
-  resolution: "fastify@npm:4.11.0"
+"fastify@npm:^4.14.1":
+  version: 4.14.1
+  resolution: "fastify@npm:4.14.1"
   dependencies:
-    "@fastify/ajv-compiler": ^3.3.1
+    "@fastify/ajv-compiler": ^3.5.0
     "@fastify/error": ^3.0.0
     "@fastify/fast-json-stringify-compiler": ^4.1.0
     abstract-logging: ^2.0.1
     avvio: ^8.2.0
-    content-type: ^1.0.4
+    fast-content-type-parse: ^1.0.0
     find-my-way: ^7.3.0
     light-my-request: ^5.6.1
     pino: ^8.5.0
@@ -624,7 +640,7 @@ __metadata:
     secure-json-parse: ^2.5.0
     semver: ^7.3.7
     tiny-lru: ^10.0.0
-  checksum: 814803b1015ae47cce4d7877a16788abee3ba6bba23e7e1b08a6cc62b43828aa6c38624de835c5b422da902fa93b316d1222d191b8373bebd8acbd68c8843584
+  checksum: 243c376fea832a80627fdfdc191043c648430ff4f6c44831b6cad9328cbd02f5ef589de6e4bbe4d075d248e686a0b20832d9b2a6a6f13a92a75a1cbd30ce2cd5
   languageName: node
   linkType: hard
 

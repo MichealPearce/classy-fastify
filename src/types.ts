@@ -1,20 +1,51 @@
-export type ClassType<
-	I extends object,
-	P extends any[] = any[],
-	S extends object = object,
-> = {
-	[Prop in keyof S]: S[Prop]
-} & (new (...args: P) => I)
+import { ClassType, Rollable } from '@michealpearce/utils'
+import {
+	FastifyRequest,
+	FastifyReply,
+	FastifyInstance,
+	FastifyPluginOptions,
+	RawReplyDefaultExpression,
+	RawRequestDefaultExpression,
+	RawServerDefault,
+} from 'fastify'
+import { Endpoint } from './classes'
 
-export type FunctionType<P extends any[] = any[], R = any, T = any> = (
-	this: T,
-	...args: P
-) => R
+export type MiddlewareDefinition = (
+	request: FastifyRequest,
+	reply: FastifyReply,
+) => Rollable
 
-export type ObjectMethodNames<Obj extends object> = {
-	[Key in keyof Obj]: Obj[Key] extends FunctionType ? Key : never
-}[keyof Obj]
+export type PluginDefinition<
+	Instance extends FastifyInstance,
+	Options extends FastifyPluginOptions,
+> = (instance: Instance, options: Options) => Rollable
 
-export type ObjectMethods<Obj extends object> = {
-	[Key in ObjectMethodNames<Obj>]: Obj[Key]
+export interface EndpointDefinition {
+	body?: unknown
+	query?: unknown
+	params?: unknown
+	headers?: unknown
 }
+
+export type EndpointDefToGeneric<Def extends EndpointDefinition> = {
+	Body: Def['body']
+	Querystring: Def['query']
+	Params: Def['params']
+	Headers: Def['headers']
+}
+
+export type EndpointRequest<Def extends EndpointDefinition> = FastifyRequest<
+	EndpointDefToGeneric<Def>
+>
+export type EndpointReply<Def extends EndpointDefinition> = FastifyReply<
+	RawServerDefault,
+	RawRequestDefaultExpression,
+	RawReplyDefaultExpression,
+	EndpointDefToGeneric<Def>
+>
+
+export type EndpointClass<EP extends Endpoint = Endpoint> = ClassType<
+	EP,
+	ConstructorParameters<typeof Endpoint>,
+	typeof Endpoint
+>
