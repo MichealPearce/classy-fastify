@@ -88,7 +88,7 @@ export function defineRoute(
 	function endpoint(method: HTTPMethods, subPath?: string) {
 		return function decorateEndpoint(Target: any) {
 			Target.method = method
-			Target.path = subPath ? join(path, subPath) : path
+			Target.url = subPath ? join(path, subPath) : path
 			Target.handler = async function (request: any, reply: any) {
 				const endpoint = new Target(this, request, reply)
 
