@@ -3,6 +3,7 @@ import {
 	defaults,
 	FunctionType,
 	isFunction,
+	isPromise,
 	noop,
 	Rollable,
 } from '@michealpearce/utils'
@@ -14,7 +15,6 @@ import {
 	HTTPMethods,
 } from 'fastify'
 import { join } from 'path'
-import { isPromise } from 'util/types'
 import { MiddlewareDefinition, PluginDefinition, EndpointClass } from './types'
 
 export function defineMiddleware(handler: MiddlewareDefinition) {
