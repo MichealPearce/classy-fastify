@@ -1,8 +1,7 @@
 echo 'cleaning...'
 rm -rf dist
 
-echo 'compiling esm...'
-tsc --module esnext --target esnext --outDir dist/esm
+vite build
 
-echo 'compiling cjs...'
-tsc --module commonjs --target esnext --outDir dist/cjs
+echo 'generating types...'
+tsc --outDir dist
